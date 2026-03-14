@@ -5,10 +5,10 @@ import os
 import pytest
 # Add project root to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from GitDemo.PageObjects.Home_page import HomePage
+from PageObjects.Home_page import HomePage
 
 
-test_data_path = "GitDemo/Data/test_e2eTestFramework.json"
+test_data_path = "Data/test_e2eTestFramework.json"
 with open(test_data_path) as f:
     test_data = json.load(f)
     test_data_list = test_data["data"]
@@ -17,6 +17,7 @@ with open(test_data_path) as f:
 @pytest.mark.order(2)
 def test_random():
     print("random test")
+    print("branch: develop2")
     # homepage.goto_homepage()#failed test case for testing running only failed tests using "pytest --lf"
 
 #@pytest.mark.parametrize("test_list_item",test_data_list)
