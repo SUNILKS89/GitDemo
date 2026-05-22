@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Setup Environment') {
             steps {
-                sh 'googledriver --version || true'
-                sh 'chromium-browser --version || true'
+                sh 'chromedriver --version || true'
+                sh 'google-chrome --version || true'
                 sh 'which google-chrome || true'
+                sh 'which chromedriver || true'
             }
         }
         stage('Build') {
