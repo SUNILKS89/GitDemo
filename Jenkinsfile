@@ -11,8 +11,8 @@ pipeline {
         stage('Install Chrome dependencies') {
             steps {
                 sh '''
-                sudo apt-get update
-                sudo apt-get install -y \
+                apt-get update
+                apt-get install -y \
                     libnss3 \
                     libgconf-2-4 \
                     libatk-bridge2.0-0 \
