@@ -8,20 +8,6 @@ pipeline {
                 sh '. venv/bin/activate && pip install -r requirements.txt'
             }
         }
-        stage('Install Chrome dependencies') {
-            steps {
-                sh '''
-                apt-get update
-                apt-get install -y \
-                    libnss3 \
-                    libgconf-2-4 \
-                    libatk-bridge2.0-0 \
-                    libgtk-3-0 \
-                    libxss1 \
-                    libasound2
-                '''
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building application...'
