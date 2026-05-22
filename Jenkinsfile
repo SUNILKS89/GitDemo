@@ -17,9 +17,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'source venv/bin/activate'
-                sh 'pip install -U selenium'
-                sh 'pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
+
+                sh '/var/lib/jenkins/workspace/Python Automation/venv/bin/python -m pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
             }
         }
 
