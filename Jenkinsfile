@@ -17,8 +17,7 @@ pipeline {
 
         stage('Test') {
             steps {
-
-                sh '/var/lib/jenkins/workspace/Python Automation/venv/bin/python -m pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
+                sh 'pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
             }
         }
 
