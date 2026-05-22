@@ -17,8 +17,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                source venv/bin/activate
-                pip install -U selenium
+                sh 'source venv/bin/activate'
+                sh 'pip install -U selenium'
                 sh 'pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
             }
         }
