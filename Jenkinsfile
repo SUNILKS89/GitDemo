@@ -17,7 +17,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'pytest -v'
+                sh 'pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v'
             }
         }
 
