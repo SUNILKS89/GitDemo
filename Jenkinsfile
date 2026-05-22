@@ -6,6 +6,9 @@ pipeline {
                 sh 'python3 -m venv venv'
                 sh '. venv/bin/activate && pip install --upgrade pip'
                 sh '. venv/bin/activate && pip install -r requirements.txt'
+                sh 'google-chrome --version || true'
+                sh 'chromium-browser --version || true'
+                sh 'which google-chrome || true'
             }
         }
         stage('Build') {
