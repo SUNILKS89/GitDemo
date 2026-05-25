@@ -10,9 +10,8 @@ class HomePage:
         #self.homepage_submenu=(By.CSS_SELECTOR,"#tb-megamenu-column-1 > div.tb-megamenu-column-inner > ul.tb-megamenu-subnav > li.tb-megamenu-item:nth-child(1) > a")
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History'")
     def goto_homepage(self):
-        wait = WebDriverWait(self.driver, 50)
-       
-        wait.until(Expected_Conditions.visibility_of_element_located((self.homepage_button )))
+        #wait = WebDriverWait(self.driver, 50)
+        #wait.until(Expected_Conditions.visibility_of_element_located((self.homepage_button )))
         element = self.driver.find_element(*self.homepage_button )
         ActionChains(self.driver).move_to_element(element).perform()
 
