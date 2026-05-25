@@ -27,6 +27,7 @@ def test_home_page(test_browser_instance):
     driver = test_browser_instance
     driver.get("https://www.pragati-automation.com/")
 
+    print(driver.current_url)
     print(driver.title)
     homepage = HomePage(driver)
     homepage.goto_homepage()
