@@ -10,7 +10,9 @@ class HomePage:
         self.homepage_submenu=(By.CSS_SELECTOR,
                    "#tb-megamenu-column-1 > div.tb-megamenu-column-inner > ul.tb-megamenu-subnav > li.tb-megamenu-item:nth-child(1) > a")
     def goto_homepage(self):
+        wait = WebDriverWait(self.driver, 50)
         element = self.driver.find_element(*self.homepage_button )
+        wait.until(Expected_Conditions.visibility_of_element_located(element))
         ActionChains(self.driver).move_to_element(element).perform()
 
     def goto_homepage_submenu(self):
