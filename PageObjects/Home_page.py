@@ -12,7 +12,7 @@ class HomePage:
     def goto_homepage(self):
         wait = WebDriverWait(self.driver, 50)
         element = self.driver.find_element(*self.homepage_button )
-        wait.until(Expected_Conditions.visibility_of_element_located(*self.homepage_button ))
+        wait.until(Expected_Conditions.visibility_of_element_located((*self.homepage_button )))
         ActionChains(self.driver).move_to_element(element).perform()
 
     def goto_homepage_submenu(self):
