@@ -16,6 +16,6 @@ class HomePage:
         ActionChains(self.driver).move_to_element(element).perform()
 
     def goto_homepage_submenu(self):
-        wait = WebDriverWait(self.driver, 50)
-        submenu_list = wait.until(Expected_Conditions.element_to_be_clickable(self.homepage_submenu))
+        wait = WebDriverWait(self.driver, 10)
+        submenu_list = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_submenu))
         submenu_list.click()
