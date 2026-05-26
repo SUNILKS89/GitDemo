@@ -20,7 +20,7 @@ def test_browser_instance(request):
         options.add_argument("--no-sandbox")
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--disable-dev-shm-usage")
-        service = Service("/usr/bin/")
+        service = Service("/usr/bin/chromedriver")
         driver = webdriver.Chrome(service=service,options=options)
         #driver = webdriver.Chrome()
     elif browser_name == 'edge':
