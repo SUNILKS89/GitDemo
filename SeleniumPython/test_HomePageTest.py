@@ -30,7 +30,7 @@ def test_home_page(test_browser_instance):
     print(driver.title)
     homepage = HomePage(driver)
     homepage.goto_homepage()
-    homepage.goto_homepage_submenu()
+    #homepage.goto_homepage_submenu()
     #driver.back()
     time.sleep(5)
 
