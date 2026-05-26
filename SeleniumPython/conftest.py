@@ -15,13 +15,13 @@ def test_browser_instance(request):
     browser_name = request.config.getoption("--browser_name")
     if browser_name == "chrome":
         options = Options()
-        options.binary_location = "/opt/google/chrome"
+        options.binary_location = "/usr/bin/google/chrome/"
         options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--disable-dev-shm-usage")
-        #service = Service("/usr/bin/chromedriver")
-        driver = webdriver.Chrome(options=options)
+        #service = Service("/usr/bin/")
+        driver = webdriver.Chrome(service=service,options=options)
         #driver = webdriver.Chrome()
     elif browser_name == 'edge':
         driver = webdriver.Edge()
