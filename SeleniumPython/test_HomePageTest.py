@@ -16,7 +16,6 @@ with open(test_data_path) as f:
 @pytest.mark.smoke
 @pytest.mark.order(2)
 def test_random():
-    print("random test")
     print("printing from test_random()")
     # homepage.goto_homepage()#failed test case for testing running only failed tests using "pytest --lf"
 
