@@ -15,6 +15,11 @@ class HomePage:
         element = self.driver.find_element(*self.homepage_button )
         ActionChains(self.driver).move_to_element(element).perform()
 
+        #adding submenu() code here for testing
+        wait = WebDriverWait(self.driver, 10)
+        submenu_list = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_submenu))
+        submenu_list.click()
+
     def goto_homepage_submenu(self):
         wait = WebDriverWait(self.driver, 10)
         submenu_list = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_submenu))
