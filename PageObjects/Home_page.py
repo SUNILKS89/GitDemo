@@ -12,8 +12,8 @@ class HomePage:
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History']")
     def goto_homepage(self):
         wait = WebDriverWait(self.driver, 20)
-        element = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_button))
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        #element = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_button))
+        #self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         #element = self.driver.find_element(*self.homepage_button )
         ActionChains(self.driver).move_to_element(element).pause(2).perform()
 
