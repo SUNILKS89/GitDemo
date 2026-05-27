@@ -6,7 +6,8 @@ from selenium.webdriver.support import expected_conditions as Expected_Condition
 class HomePage:
     def __init__(self,driver):
         self.driver = driver
-        self.homepage_button =(By.CSS_SELECTOR, "ul.tb-megamenu-nav > li.tb-megamenu-item:nth-child(1)")
+        #self.homepage_button =(By.CSS_SELECTOR, "ul.tb-megamenu-nav > li.tb-megamenu-item:nth-child(1)")
+        self.homepage_button = (By.XPATH,"//li[contains(@class,'tb-megamenu-item')]//a[contains(text(),'Home')]")
         #self.homepage_submenu=(By.CSS_SELECTOR,"#tb-megamenu-column-1 > div.tb-megamenu-column-inner > ul.tb-megamenu-subnav > li.tb-megamenu-item:nth-child(1) > a")
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History']")
     def goto_homepage(self):
