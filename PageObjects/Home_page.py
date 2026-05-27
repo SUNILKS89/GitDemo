@@ -19,8 +19,8 @@ class HomePage:
 
         #adding submenu() code here for testing
         #wait = WebDriverWait(self.driver, 10)
-        submenu_list = wait.until(Expected_Conditions.element_to_be_clickable(self.homepage_submenu))
-        submenu_list.click()
+        # submenu_list = wait.until(Expected_Conditions.element_to_be_clickable(self.homepage_submenu))
+        # submenu_list.click()
 
     def goto_homepage_submenu(self):
         wait = WebDriverWait(self.driver, 10)
