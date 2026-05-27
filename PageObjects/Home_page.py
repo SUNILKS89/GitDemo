@@ -11,7 +11,7 @@ class HomePage:
         #self.homepage_submenu=(By.CSS_SELECTOR,"#tb-megamenu-column-1 > div.tb-megamenu-column-inner > ul.tb-megamenu-subnav > li.tb-megamenu-item:nth-child(1) > a")
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History']")
     def goto_homepage(self):
-        wait = WebDriverWait(self.driver, 20)
+        wait = WebDriverWait(self.driver, 10)
         #element = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_button))
         #self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         element = self.driver.find_element(*self.homepage_button )
