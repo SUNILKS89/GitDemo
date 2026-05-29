@@ -1,7 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as Expected_Conditions
+from selenium.webdriver.support import expected_conditions as EC
 
 class HomePage:
     def __init__(self,driver):
@@ -14,13 +14,13 @@ class HomePage:
         wait = WebDriverWait(self.driver, 10)
         wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
         #element = self.driver.find_element(*self.homepage_button )
-        element = wait.until(Expected_Conditions.visibility_of_element_located(self.homepage_button))
+        element = wait.until(EC.visibility_of_element_located(self.homepage_button))
                 # scroll into view
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         ActionChains(self.driver).move_to_element(element).pause(1).perform()
 
         #adding submenu() code here for testing
-        submenu_list = wait.until(Expected_Conditions.element_to_be_clickable(self.homepage_submenu))
+        submenu_list = wait.until(EC.element_to_be_clickable(self.homepage_submenu))
         submenu_list.click()
 
     def goto_homepage_submenu(self):
