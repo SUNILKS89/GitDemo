@@ -12,14 +12,15 @@ class HomePage:
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History']")
     def goto_homepage(self):
         wait = WebDriverWait(self.driver, 30)
-        wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
-        element = self.driver.find_element(*self.homepage_button )
-        #element = wait.until(EC.visibility_of_element_located(self.homepage_button))
-        self.driver.execute_script("""
-        var evt = new MouseEvent('mouseover', {bubbles: true,cancelable: true,view: window});arguments[0].dispatchEvent(evt);""", element)
+        #wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+        #element = self.driver.find_element(*self.homepage_button )
+        element = wait.until(EC.visibility_of_element_located(self.homepage_button))
+        self.driver.save_screenshot("jenkins_debug.png")
+        #self.driver.execute_script("""var evt = new MouseEvent('mouseover', {bubbles: true,cancelable: true,view: window});arguments[0].dispatchEvent(evt);""", element)
         # scroll into view
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        #self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         ActionChains(self.driver).move_to_element(element).pause(1).perform()
+        
 
         #adding submenu() code here for testing
         submenu_list = wait.until(EC.element_to_be_clickable(self.homepage_submenu))
