@@ -11,11 +11,13 @@ class HomePage:
         #self.homepage_submenu=(By.CSS_SELECTOR,"#tb-megamenu-column-1 > div.tb-megamenu-column-inner > ul.tb-megamenu-subnav > li.tb-megamenu-item:nth-child(1) > a")
         self.homepage_submenu=(By.XPATH,"//a[@href='/en/history' and normalize-space()='History']")
     def goto_homepage(self):
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 30)
         wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
-        #element = self.driver.find_element(*self.homepage_button )
-        element = wait.until(EC.visibility_of_element_located(self.homepage_button))
-                # scroll into view
+        element = self.driver.find_element(*self.homepage_button )
+        #element = wait.until(EC.visibility_of_element_located(self.homepage_button))
+        self.driver.execute_script("""
+        var evt = new MouseEvent('mouseover', {bubbles: true,cancelable: true,view: window});arguments[0].dispatchEvent(evt);""", element)
+        # scroll into view
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         ActionChains(self.driver).move_to_element(element).pause(1).perform()
 
