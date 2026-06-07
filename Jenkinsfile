@@ -8,12 +8,14 @@ pipeline {
                 sh 'which google-chrome || true'
                 sh 'which chromedriver || true'
                 sh '''
+                bash -c "
                 python3 -m venv venv
                 source venv/bin/activate
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
                 pip install playwright
                 playwright install
+                "
                 '''
             }
         }
@@ -25,8 +27,12 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'source venv/bin/activate'
-                sh 'pytest PlaywrightPython/Test.py -v -s'
+                sh '''
+                bash -c "
+                source venv/bin/activate
+                pytest PlaywrightPython/Test.py -v -s
+                "
+                '''
             }
         }
 
