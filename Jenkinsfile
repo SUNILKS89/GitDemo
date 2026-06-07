@@ -8,7 +8,7 @@ pipeline {
                 sh 'which google-chrome || true'
                 sh 'which chromedriver || true'
                 sh '''
-                bash -c "
+                xvfb-run -a bash -c "
                 python3 -m venv venv
                 source venv/bin/activate
                 python -m pip install --upgrade pip
