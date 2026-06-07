@@ -24,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '. venv/bin/activate'
-                sh 'pytest SeleniumPython/test_HomePageTest.py --browser_name=chrome -v -s'
+                sh 'pytest PlaywrightPython/Test.py -v -s'
             }
         }
 
