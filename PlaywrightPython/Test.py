@@ -61,7 +61,7 @@ def test_UI(playwright):
     time.sleep(5)
 
 def test_childwindowHandle(playwright):
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     page =browser.new_page()
     page.goto("https://rahulshettyacademy.com/loginpagePractise/")  
     with page.expect_popup() as newpage_info:
