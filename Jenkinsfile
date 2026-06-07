@@ -8,7 +8,7 @@ pipeline {
                 sh 'which google-chrome || true'
                 sh 'which chromedriver || true'
                 sh '''
-                python -m venv venv
+                python3 -m venv venv
                 source venv/bin/activate
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
