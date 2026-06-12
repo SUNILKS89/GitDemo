@@ -27,3 +27,15 @@ def test_alert_window(playwright):
     element.scroll_into_view_if_needed()
     element.click()
     time.sleep(4)    
+    
+    #frame handling with palywright
+    page_frame = page.frame_locator("#courses-iframe")
+    page_frame.get_by_role("link",name="All Access plan").click()
+    
+def test_MouseHovering(playwright):
+    browser = playwright.firefox.launch(headless=False)
+    page = browser.new_page()
+    page.goto("https://rahulshettyacademy.com/AutomationPractice/")
+
+    page.locator("#mousehover").hover()
+    page.get_by_role("link",name="Top").click()
