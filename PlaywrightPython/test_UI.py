@@ -17,7 +17,7 @@ def test_UI_Tests(playwright):
 
 
 def test_alert_window(playwright):
-    browser = playwright.firefox.launch(headless=False)
+    browser = playwright.firefox.launch(headless=True)
     page = browser.new_page()
     page.goto("https://rahulshettyacademy.com/AutomationPractice/")
     #alert window handling
@@ -33,7 +33,7 @@ def test_alert_window(playwright):
     page_frame.get_by_role("link",name="All Access plan").click()
     
 def test_MouseHovering(playwright):
-    browser = playwright.firefox.launch(headless=False)
+    browser = playwright.firefox.launch(headless=True)
     page = browser.new_page()
     page.goto("https://rahulshettyacademy.com/AutomationPractice/")
 
