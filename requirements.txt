@@ -15,3 +15,7 @@ urllib3==2.6.3
 mysql-connector-python
 pytest-bdd
 behave
+
+pip install playwright
+pip install pytest-playwright
+playwright install
