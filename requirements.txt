@@ -16,6 +16,5 @@ mysql-connector-python
 pytest-bdd
 behave
 
-pip install playwright
-pip install pytest-playwright
-playwright install
+playwright
+pytest-playwright
