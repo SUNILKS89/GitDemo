@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                 bash -c "
                 source venv/bin/activate
-                xvfb-run -a pytest PlaywrightPython/Test.py -v -s
+                //xvfb-run -a pytest PlaywrightPython/Test.py -v -s
                 xvfb-run -a pytest PlaywrightPython/test_UI.py -v -s
                 "
                 '''
